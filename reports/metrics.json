@@ -1,0 +1,87 @@
+{
+  "data_quality": {
+    "rows_raw": 24871,
+    "duplicate_trips_removed": 37,
+    "negative_passengers_removed": 12,
+    "over_capacity_removed": 24,
+    "missing_fare_rows(imputed_later)": 124,
+    "rows_clean": 24798
+  },
+  "val_scores": {
+    "Baseline: route/time/weekday mean": {
+      "MAE": 5.167559554414685,
+      "RMSE": 6.579967866713886,
+      "WAPE_%": 20.436343254172982,
+      "Bias": 0.6415127925676661
+    },
+    "Ridge": {
+      "MAE": 5.111094149287211,
+      "RMSE": 6.518749757810573,
+      "WAPE_%": 20.21303738047769,
+      "Bias": -0.2357084300214114
+    },
+    "RandomForest": {
+      "MAE": 5.105421920978499,
+      "RMSE": 6.47632650691975,
+      "WAPE_%": 20.190605204609714,
+      "Bias": -0.20176391916285075
+    },
+    "LightGBM (tuned)": {
+      "MAE": 4.901124868924941,
+      "RMSE": 6.292306627575779,
+      "WAPE_%": 19.382663924471913,
+      "Bias": -0.6425660273280611
+    }
+  },
+  "test_scores": {
+    "Baseline: route/time/weekday mean": {
+      "MAE": 5.988298088470774,
+      "RMSE": 7.505917550373705,
+      "WAPE_%": 20.080982426344672,
+      "Bias": -4.030112137025268
+    },
+    "Baseline: same slot last week": {
+      "MAE": 6.621767701296599,
+      "RMSE": 8.707123438868363,
+      "WAPE_%": 22.205240767336385,
+      "Bias": -0.24724785494576654
+    },
+    "Ridge": {
+      "MAE": 5.114744184475674,
+      "RMSE": 6.489963545168759,
+      "WAPE_%": 17.151632494957067,
+      "Bias": -0.5780557156788538
+    },
+    "RandomForest": {
+      "MAE": 5.237878818335473,
+      "RMSE": 6.569200245914342,
+      "WAPE_%": 17.564548549248624,
+      "Bias": -1.0627799508661764
+    },
+    "LightGBM (tuned)": {
+      "MAE": 5.002954514664742,
+      "RMSE": 6.323289887767707,
+      "WAPE_%": 16.776760308944457,
+      "Bias": -1.4749914124934957
+    }
+  },
+  "interval_coverage_80": 0.7291933418693982,
+  "mean_interval_width": 14.077014212703316,
+  "best_params": {
+    "num_leaves": 31,
+    "learning_rate": 0.05,
+    "min_child_samples": 20,
+    "colsample_bytree": 0.6,
+    "subsample": 0.9,
+    "reg_lambda": 0
+  },
+  "n_estimators_final": 417,
+  "split": {
+    "train_end": "2024-06-30",
+    "val_end": "2024-09-30",
+    "data_end": "2024-12-31",
+    "n_train": 17603,
+    "n_val": 3121,
+    "n_test": 3124
+  }
+}
